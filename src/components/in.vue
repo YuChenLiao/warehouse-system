@@ -1,10 +1,10 @@
 <template>
-  <div>首页</div>
+  <div>入库登记</div>
 </template>
 
 <script>
 export default {
-  name: 'firstPage',
+  name: 'inHouse',
   data () {
     return {
     }
