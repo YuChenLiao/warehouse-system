@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import firstPage from '@/components/firstPage'
-import inHouse from '@/components/in'
-import outHouse from '@/components/out'
-import system from '@/components/system'
+import firstPage from '@/pages/firstPage'
+import inHouse from '@/pages/in'
+import outHouse from '@/pages/out'
+import system from '@/pages/system'
 
 Vue.use(Router)
 

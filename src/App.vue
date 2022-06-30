@@ -2,7 +2,7 @@
   <div id="app">
     <el-header>Header</el-header>
     <el-container class="mainView">
-      <el-aside width="200px">Aside</el-aside>
+      <el-aside width="200px"><side-bar></side-bar></el-aside>
       <el-container>
         <el-main>
           <router-view/>
@@ -14,8 +14,13 @@
 </template>
 
 <script>
+import sideBar from './components/sideBar.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    sideBar
+  }
 }
 </script>
 
