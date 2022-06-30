@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import sideBar from './components/sideBar.vue'
+import SideBar from './components/sideBar.vue'
 
 export default {
   name: 'App',
   components: {
-    sideBar
+    SideBar
   }
 }
 </script>
@@ -45,7 +45,7 @@ export default {
 }
   
 .el-aside {
-  background-color: #D3DCE6;
+  background-color: #ffffff;
   color: #333;
   text-align: center;
   line-height: 200px;
