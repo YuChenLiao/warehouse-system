@@ -5,7 +5,8 @@
         default-active="2"
         class="el-menu-vertical-demo"
         @open="handleOpen"
-        @close="handleClose">
+        @close="handleClose"
+      >
         <el-menu-item index="1">
           <i class="el-icon-menu"></i>
           <span slot="title">导航一</span>
@@ -30,14 +31,11 @@
 <script>
 export default {
   name: "SideBar",
-  data () {
-    return {
-
-    }
-  }
-}
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style scoped>
-
 </style>

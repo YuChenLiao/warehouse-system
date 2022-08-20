@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import login from '@/pages/login'
 import firstPage from '@/pages/firstPage'
 import inHouse from '@/pages/in'
 import outHouse from '@/pages/out'
@@ -11,6 +12,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/firstPage',
       name: 'firstPage',
       component: firstPage
     },
