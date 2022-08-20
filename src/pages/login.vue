@@ -2,7 +2,17 @@
   <div class="back">
     <div class="loginBox">
       <p class="title">登录</p>
-      <el-form></el-form>
+      <el-form>
+        <el-form-item>
+          <el-input></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-input></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button>登录</el-button>
+        </el-form-item>
+      </el-form>
     </div>
   </div>
 </template>
@@ -27,7 +37,6 @@ export default {
 
 .loginBox {
   width: 50%;
-  height: 400px;
   background-color: #fff;
   border-radius: 10px;
   padding: 30px;
@@ -38,5 +47,6 @@ export default {
   line-height: 40px;
   font-size: 30px;
   font-weight: bold;
+  margin-bottom: 4vw;
 }
 </style>
