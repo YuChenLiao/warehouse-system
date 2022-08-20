@@ -2,15 +2,15 @@
   <div class="back">
     <div class="loginBox">
       <p class="title">登录</p>
-      <el-form>
+      <el-form :model="loginForm">
         <el-form-item label="用户名" label-width="100px">
-          <el-input></el-input>
+          <el-input v-model="loginForm.userName"></el-input>
         </el-form-item>
         <el-form-item label="密码" label-width="100px">
-          <el-input></el-input>
+          <el-input v-model="loginForm.password"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button>登录</el-button>
+          <el-button type="primary" @click="login">登录</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -21,8 +21,19 @@
 export default {
   name: "login",
   data() {
-    return {};
+    return {
+      loginForm: {
+        userName: '',
+        password: ''
+      }
+    };
   },
+
+  methods: {
+    login() {
+      this.$router.push('/firstPage')
+    }
+  }
 };
 </script>
 
