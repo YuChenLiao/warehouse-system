@@ -3,10 +3,10 @@
     <div class="loginBox">
       <p class="title">登录</p>
       <el-form>
-        <el-form-item>
+        <el-form-item label="用户名" label-width="100px">
           <el-input></el-input>
         </el-form-item>
-        <el-form-item>
+        <el-form-item label="密码" label-width="100px">
           <el-input></el-input>
         </el-form-item>
         <el-form-item>
