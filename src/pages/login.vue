@@ -2,11 +2,11 @@
   <div class="back">
     <div class="loginBox">
       <p class="title">登录</p>
-      <el-form :model="loginForm">
-        <el-form-item label="用户名" label-width="100px">
+      <el-form :model="loginForm" :rules="rules">
+        <el-form-item label="用户名" label-width="80px" prop="user">
           <el-input v-model="loginForm.userName"></el-input>
         </el-form-item>
-        <el-form-item label="密码" label-width="100px">
+        <el-form-item label="密码" label-width="80px" prop="pass">
           <el-input v-model="loginForm.password"></el-input>
         </el-form-item>
         <el-form-item>
@@ -25,6 +25,10 @@ export default {
       loginForm: {
         userName: '',
         password: ''
+      },
+      rules: {
+        user: { required: true, message: '用户名不能为空', trigger: 'blur' },
+        pass: { required: true, message: '密码不能为空', trigger: 'blur' }
       }
     };
   },
@@ -47,7 +51,7 @@ export default {
 }
 
 .loginBox {
-  width: 50%;
+  width: 30%;
   background-color: #fff;
   border-radius: 10px;
   padding: 30px;
