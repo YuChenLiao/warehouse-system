@@ -19,17 +19,50 @@
         <el-button type="danger">清空</el-button>
       </el-form-item>
     </el-form>
+    <div class="title">在库原料信息</div>
+    <el-table class="tables" :data="tableData" border >
+      <el-table-column
+        label="原料名称"
+        prop="name"
+      >
+      </el-table-column>
+      <el-table-column
+        label="入库时间"
+        prop="time"
+      ></el-table-column>
+      <el-table-column
+        label="往来单位"
+        prop="where"
+      ></el-table-column>
+      <el-table-column
+        label="在库数量"
+        prop="num"
+      ></el-table-column>
+      <el-table-column
+        labal="查看明细"
+        prop="check"
+      ></el-table-column>
+    </el-table>
   </el-card>
 </template>
 
 <script>
 export default {
-  name: 'firstPage',
-  data () {
+  name: "firstPage",
+  data() {
     return {
-    }
-  }
-}
+      tableData: [
+        {
+          name: "1",
+          time: "1",
+          where: "1",
+          num: "1",
+          check: "查看"
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -37,7 +70,7 @@ export default {
 .title {
   text-align: center;
   font-weight: bold;
-  border-bottom: 1px #ccc solid;
+  border-bottom: 1px #ddd solid;
   padding: 10px;
   padding-top: 0;
   height: 3vw;
@@ -47,5 +80,9 @@ export default {
 .forms {
   margin-top: 40px;
   text-align: left;
+}
+
+.tables {
+  border-top: #ddd 1px solid;
 }
 </style>
