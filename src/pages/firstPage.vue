@@ -67,22 +67,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.title {
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 1px #ddd solid;
-  padding: 10px;
-  padding-top: 0;
-  height: 3vw;
-  line-height: 3vw;
-}
-
-.forms {
-  margin-top: 40px;
-  text-align: left;
-}
-
-.tables {
-  border-top: #ddd 1px solid;
-}
 </style>

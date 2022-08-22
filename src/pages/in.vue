@@ -1,7 +1,15 @@
 <template>
   <el-card>
     <div class="title">入库登记</div>
-    <el-form></el-form>
+    <el-form class="forms">
+      <el-form-item label="原料名称" label-width="80px">
+        <el-input></el-input>
+      </el-form-item>
+      <el-form-item label="入库数量" label-width="80px">
+        <el-input></el-input>
+      </el-form-item>
+      <el-form-item></el-form-item>
+    </el-form>
   </el-card>
 </template>
 
@@ -17,13 +25,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.title {
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 1px #ddd solid;
-  padding: 10px;
-  padding-top: 0;
-  height: 3vw;
-  line-height: 3vw;
-}
+
 </style>
