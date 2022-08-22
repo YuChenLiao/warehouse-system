@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <el-header>Header</el-header>
+    <el-header v-if="ifLogin">仓库管理系统</el-header>
     <el-container class="mainView">
-      <el-aside width="200px"><side-bar></side-bar></el-aside>
+      <el-aside width="200px"  v-if="ifLogin"><side-bar></side-bar></el-aside>
       <el-container>
         <el-main>
           <router-view/>
@@ -20,6 +20,13 @@ export default {
   name: 'App',
   components: {
     SideBar
+  },
+  computed: {
+    ifLogin() {
+      if(this.$route.path != '/')
+        return true
+      else return false
+    }
   }
 }
 </script>
