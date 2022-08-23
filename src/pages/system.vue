@@ -3,12 +3,15 @@
     <div class="title">系统管理</div>
     <el-form class="forms">
       <el-form-item style="text-align: center">
-        <el-button type="primary">数据库备份</el-button>
-        <el-button type="success">添加新用户</el-button>
+        <el-button type="primary" @click="backupData" :loading="backup"
+          >数据库备份</el-button
+        >
+        <el-button type="success" @click="showAddForm">添加新用户</el-button>
       </el-form-item>
     </el-form>
     <div class="title">用户管理</div>
     <el-table></el-table>
+    <el-dialog :visible.sync="showForm"></el-dialog>
   </el-card>
 </template>
 
@@ -16,7 +19,23 @@
 export default {
   name: "system",
   data() {
-    return {};
+    return {
+      showForm: false, // 控制添加用户表单的显示
+      backup: false, // 控制备份按钮的加载状态
+      addUser: false, //控制添加用户按钮的加载状态
+    };
+  },
+  methods: {
+    showAddForm() {
+      this.showForm = true
+    },
+
+    backupData() {
+      this.backup = true;
+      setInterval(() => {
+        this.backup = false;
+      }, 5000);
+    },
   },
 };
 </script>

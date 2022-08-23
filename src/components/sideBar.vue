@@ -4,8 +4,6 @@
       <el-menu
         :default-active="switchPath"
         class="el-menu-vertical-demo"
-        @open="handleOpen"
-        @close="handleClose"
       >
         <el-menu-item index="1" @click="toPage('1')">
           <i class="el-icon-menu"></i>
