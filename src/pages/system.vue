@@ -11,7 +11,20 @@
     </el-form>
     <div class="title">用户管理</div>
     <el-table></el-table>
-    <el-dialog :visible.sync="showForm"></el-dialog>
+    <el-dialog :visible.sync="showForm">
+      <el-form>
+        <el-form-item label="用户名" label-width="80px">
+          <el-input></el-input>
+        </el-form-item>
+        <el-form-item label="密码" label-width="80px">
+          <el-input></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary">添加用户</el-button>
+          <el-button type="danger" @click="showForm = false">取消</el-button>
+        </el-form-item>
+      </el-form>
+    </el-dialog>
   </el-card>
 </template>
 
