@@ -43,7 +43,7 @@ export default {
   methods: {
     submit() {
       this.submited = true;
-      setInterval(() => {
+      setTimeout(() => {
         this.submited = false;
       }, 5000);
     },
