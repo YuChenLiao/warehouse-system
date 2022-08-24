@@ -50,6 +50,10 @@ export default {
       this.backup = true;
       setTimeout(() => {
         this.backup = false;
+        this.$message({
+          message: "备份成功",
+          type: "success",
+        });
       }, 5000);
     },
 
@@ -58,6 +62,10 @@ export default {
       this.submited = true;
       setTimeout(() => {
         this.submited = false;
+        this.$message({
+          message: "提交成功",
+          type: "success",
+        });
       }, 5000);
     },
   },
