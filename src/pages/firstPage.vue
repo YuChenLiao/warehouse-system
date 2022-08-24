@@ -1,27 +1,27 @@
 <template>
   <el-card>
     <div class="title">物料登记</div>
-    <el-form class="forms">
+    <el-form class="forms" :model="submitForm">
       <el-form-item label="原料名称" label-width="80px">
-        <el-input class="mid"></el-input>
+        <el-input class="mid" v-model="submitForm.pname"></el-input>
       </el-form-item>
       <el-form-item label="原料种类" label-width="80px">
-        <el-select value=""></el-select>
+        <el-select value="" v-model="submitForm.type"></el-select>
       </el-form-item>
       <el-form-item label="存放仓库" label-width="80px">
-        <el-select value=""></el-select>
+        <el-select value="" v-model="submitForm.store"></el-select>
       </el-form-item>
       <el-form-item label="入库价格" label-width="80px">
-        <el-input type="number" class="mini"></el-input>
-      </el-form-item>
-      <el-form-item label="负责人" label-width="80px">
-        <el-input class="mid"></el-input>
+        <el-input type="number" class="mini" v-model="submitForm.price"></el-input>
       </el-form-item>
       <el-form-item label="物料单位" label-width="80px">
-        <el-input class="mid"></el-input>
+        <el-input class="mini" v-model="submitForm.punit"></el-input>
       </el-form-item>
-      <el-form-item label="往来单位" label-width="80px">
-        <el-input class="mid"></el-input>
+      <el-form-item label="入库数量" label-width="80px">
+        <el-input class="mini" type="number" v-model="submitForm.num"></el-input>
+      </el-form-item>
+      <el-form-item label="负责人" label-width="80px">
+        <el-input class="mini" v-model="submitForm.username"></el-input>
       </el-form-item>
       <el-form-item label-width="80px">
         <el-button type="primary" @click="submit" :loading="submited"
@@ -59,6 +59,15 @@ export default {
           price: 23,
         },
       ],
+      submitForm: {
+        pname: '',
+        punit: '',
+        store: '',
+        type: '',
+        price: 0,
+        num: 0,
+        username: ''
+      },
       submited: false,
     };
   },
