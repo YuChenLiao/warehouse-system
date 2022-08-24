@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-header v-if="ifLogin" style="font-size: 30px;font-weight:bold">仓库管理系统</el-header>
+    <el-header v-if="ifLogin" style="font-size: 30px;font-weight:bold;user-select: none;">仓库管理系统</el-header>
     <el-container class="mainView">
       <el-aside width="200px"  v-if="ifLogin"><side-bar></side-bar></el-aside>
       <el-container>
