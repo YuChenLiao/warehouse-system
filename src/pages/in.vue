@@ -18,7 +18,7 @@
         <el-input class="mini" type="number" v-model="inForm.num"></el-input>
       </el-form-item>
       <el-form-item label-width="80px">
-        <el-button type="primary">提交</el-button>
+        <el-button type="primary" @click="submit" :loading="submited">提交</el-button>
         <el-button type="danger">清空</el-button>
       </el-form-item>
     </el-form>
@@ -35,7 +35,16 @@ export default {
       inForm: {
         name: '',
         num: 0,
-      }
+      },
+      submited: false
+    }
+  },
+  methods: {
+    submit() {
+      this.submited = true
+      setInterval(() => {
+        this.submited = false;
+      }, 5000);
     }
   }
 }

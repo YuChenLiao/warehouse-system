@@ -18,7 +18,7 @@
         <el-input class="mid" v-model="outForm.name"></el-input>
       </el-form-item>
       <el-form-item label-width="80px">
-        <el-button type="primary">提交</el-button>
+        <el-button type="primary" @click="submit" :loading="submited">提交</el-button>
         <el-button type="danger">清空</el-button>
       </el-form-item>
     </el-form>
@@ -29,19 +29,28 @@
 
 <script>
 export default {
-  name: 'outHouse',
-  data () {
+  name: "outHouse",
+  data() {
     return {
       outForm: {
-        name: '',
+        name: "",
         num: 0,
-      }
-    }
-  }
-}
+      },
+      submited: false,
+    };
+  },
+
+  methods: {
+    submit() {
+      this.submited = true;
+      setInterval(() => {
+        this.submited = false;
+      }, 5000);
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

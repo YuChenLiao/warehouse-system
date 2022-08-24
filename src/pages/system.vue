@@ -6,7 +6,7 @@
         <el-button type="primary" @click="backupData" :loading="backup"
           >数据库备份</el-button
         >
-        <el-button type="success" @click="showAddForm">添加新用户</el-button>
+        <el-button type="success" @click="showAddForm" :loading="submited">添加新用户</el-button>
       </el-form-item>
     </el-form>
     <div class="title">用户管理</div>
@@ -20,7 +20,7 @@
           <el-input></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary">添加用户</el-button>
+          <el-button type="primary" @click="submitUser">添加用户</el-button>
           <el-button type="danger" @click="showForm = false">取消</el-button>
         </el-form-item>
       </el-form>
@@ -35,7 +35,8 @@ export default {
     return {
       showForm: false, // 控制添加用户表单的显示
       backup: false, // 控制备份按钮的加载状态
-      addUser: false, //控制添加用户按钮的加载状态
+      addUser: false, // 控制添加用户按钮的加载状态
+      submited: false,
     };
   },
   methods: {
@@ -49,6 +50,14 @@ export default {
         this.backup = false;
       }, 5000);
     },
+
+    submitUser() {
+      this.showForm = false
+      this.submited = true
+      setInterval(() => {
+        this.submited = false;
+      }, 5000);
+    }
   },
 };
 </script>
