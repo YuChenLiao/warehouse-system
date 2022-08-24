@@ -63,7 +63,7 @@ export default {
       setTimeout(() => {
         this.submited = false;
         this.$message({
-          message: "提交成功",
+          message: "添加成功",
           type: "success",
         });
       }, 5000);

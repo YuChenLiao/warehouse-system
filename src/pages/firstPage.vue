@@ -23,9 +23,6 @@
       <el-form-item label="往来单位" label-width="80px">
         <el-input class="mid"></el-input>
       </el-form-item>
-      <el-form-item label="原料信息" label-width="80px">
-        <el-input type="textarea"></el-input>
-      </el-form-item>
       <el-form-item label-width="80px">
         <el-button type="primary" @click="submit" :loading="submited"
           >提交</el-button
@@ -35,10 +32,12 @@
     </el-form>
     <div class="title">在库原料信息</div>
     <el-table class="tables" :data="tableData" border>
+      <el-table-column label="原料ID" prop="id"> </el-table-column>
       <el-table-column label="原料名称" prop="name"> </el-table-column>
-      <el-table-column label="入库时间" prop="time"></el-table-column>
-      <el-table-column label="往来单位" prop="where"></el-table-column>
+      <el-table-column label="往来单位" prop="unit"></el-table-column>
       <el-table-column label="在库数量" prop="num"></el-table-column>
+      <el-table-column label="入库价格" prop="price"></el-table-column>
+      <el-table-column label="入库时间" prop="time"></el-table-column>
       <el-table-column labal="查看明细" prop="check"></el-table-column>
     </el-table>
   </el-card>
@@ -51,11 +50,13 @@ export default {
     return {
       tableData: [
         {
+          id: 1001,
           name: "电线",
           time: "2022-8-10",
-          where: "xx厂家",
+          unit: "捆",
           num: "30",
           check: "查看",
+          price: 23,
         },
       ],
       submited: false,
