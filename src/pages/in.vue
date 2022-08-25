@@ -6,7 +6,7 @@
         <el-input class="mid" v-model="inForm.pname"></el-input>
       </el-form-item>
       <el-form-item label="存放仓库" label-width="80px">
-        <el-select class="mid" v-model="inForm.store"></el-select>
+        <el-select class="mini" v-model="inForm.store"></el-select>
       </el-form-item>
       <el-form-item label="负责人" label-width="80px">
         <el-input class="mid" v-model="inForm.name"></el-input>
@@ -29,6 +29,7 @@
       <el-table-column label="入库数量" prop="num"></el-table-column>
       <el-table-column label="入库价格" prop="price"></el-table-column>
       <el-table-column label="入库时间" prop="ptime"></el-table-column>
+      <el-table-column label="负责人" prop="username"></el-table-column>
       <el-table-column labal="查看明细" prop="check"></el-table-column>
     </el-table>
   </el-card>
@@ -47,6 +48,7 @@ export default {
           num: "30",
           check: "查看",
           price: 23,
+          username: '老王'
         },
       ],
       inForm: {
