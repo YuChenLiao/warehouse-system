@@ -26,10 +26,9 @@
     <el-table class="tables" :data="tableData" border>
       <el-table-column label="原料ID" prop="id"> </el-table-column>
       <el-table-column label="原料名称" prop="name"> </el-table-column>
-      <el-table-column label="往来单位" prop="unit"></el-table-column>
       <el-table-column label="入库数量" prop="num"></el-table-column>
       <el-table-column label="入库价格" prop="price"></el-table-column>
-      <el-table-column label="入库时间" prop="time"></el-table-column>
+      <el-table-column label="入库时间" prop="ptime"></el-table-column>
       <el-table-column labal="查看明细" prop="check"></el-table-column>
     </el-table>
   </el-card>
@@ -44,8 +43,7 @@ export default {
         {
           id: 1001,
           name: "电线",
-          time: "2022-8-10",
-          unit: "捆",
+          ptime: "2022-8-10",
           num: "30",
           check: "查看",
           price: 23,
