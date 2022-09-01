@@ -12,13 +12,21 @@
         <el-select value="" v-model="submitForm.store"></el-select>
       </el-form-item>
       <el-form-item label="入库价格" label-width="80px">
-        <el-input type="number" class="mini" v-model="submitForm.price"></el-input>
+        <el-input
+          type="number"
+          class="mini"
+          v-model="submitForm.price"
+        ></el-input>
       </el-form-item>
       <el-form-item label="物料单位" label-width="80px">
         <el-input class="mini" v-model="submitForm.punit"></el-input>
       </el-form-item>
       <el-form-item label="入库数量" label-width="80px">
-        <el-input class="mini" type="number" v-model="submitForm.num"></el-input>
+        <el-input
+          class="mini"
+          type="number"
+          v-model="submitForm.num"
+        ></el-input>
       </el-form-item>
       <el-form-item label="负责人" label-width="80px">
         <el-input class="mini" v-model="submitForm.username"></el-input>
@@ -31,6 +39,11 @@
       </el-form-item>
     </el-form>
     <div class="title">在库原料信息</div>
+    <el-form  class="forms">
+      <el-form-item label="日期筛选" label-width="80px">
+        <el-date-picker type="month"></el-date-picker>
+      </el-form-item>
+    </el-form>
     <el-table class="tables" :data="tableData" border>
       <el-table-column label="原料ID" prop="id"> </el-table-column>
       <el-table-column label="原料名称" prop="name"> </el-table-column>
@@ -38,7 +51,13 @@
       <el-table-column label="在库数量" prop="num"></el-table-column>
       <el-table-column label="入库价格" prop="price"></el-table-column>
       <el-table-column label="入库时间" prop="time"></el-table-column>
-      <el-table-column labal="查看明细" prop="check"></el-table-column>
+      <el-table-column labal="查看明细" prop="check">
+        <template slot-scope="scope">
+          <el-button @click="handleClick(scope.row)" type="text" size="small"
+            >查看</el-button
+          >
+        </template>
+      </el-table-column>
     </el-table>
   </el-card>
 </template>
@@ -60,13 +79,13 @@ export default {
         },
       ],
       submitForm: {
-        pname: '',
-        punit: '',
-        store: '',
-        type: '',
+        pname: "",
+        punit: "",
+        store: "",
+        type: "",
         price: 0,
         num: 0,
-        username: ''
+        username: "",
       },
       submited: false,
     };

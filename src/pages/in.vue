@@ -18,11 +18,18 @@
         <el-input class="mini" type="number" v-model="inForm.price"></el-input>
       </el-form-item>
       <el-form-item label-width="80px">
-        <el-button type="primary" @click="submit" :loading="submited">提交</el-button>
+        <el-button type="primary" @click="submit" :loading="submited"
+          >提交</el-button
+        >
         <el-button type="danger">清空</el-button>
       </el-form-item>
     </el-form>
     <div class="title">入库单详情</div>
+    <el-form  class="forms">
+      <el-form-item label="日期筛选" label-width="80px">
+        <el-date-picker type="month"></el-date-picker>
+      </el-form-item>
+    </el-form>
     <el-table class="tables" :data="tableData" border>
       <el-table-column label="原料ID" prop="id"> </el-table-column>
       <el-table-column label="原料名称" prop="name"> </el-table-column>
@@ -30,15 +37,21 @@
       <el-table-column label="入库价格" prop="price"></el-table-column>
       <el-table-column label="入库时间" prop="ptime"></el-table-column>
       <el-table-column label="负责人" prop="username"></el-table-column>
-      <el-table-column labal="查看明细" prop="check"></el-table-column>
+      <el-table-column labal="查看明细" prop="check">
+        <template slot-scope="scope">
+          <el-button @click="handleClick(scope.row)" type="text" size="small"
+            >查看</el-button
+          >
+        </template>
+      </el-table-column>
     </el-table>
   </el-card>
 </template>
 
 <script>
 export default {
-  name: 'inHouse',
-  data () {
+  name: "inHouse",
+  data() {
     return {
       tableData: [
         {
@@ -48,21 +61,21 @@ export default {
           num: "30",
           check: "查看",
           price: 23,
-          username: '老王'
+          username: "老王",
         },
       ],
       inForm: {
-        pname: '',
+        pname: "",
         num: 0,
-        store: '',
+        store: "",
         price: 0,
       },
-      submited: false
-    }
+      submited: false,
+    };
   },
   methods: {
     submit() {
-      this.submited = true
+      this.submited = true;
       setTimeout(() => {
         this.submited = false;
         this.$message({
@@ -70,12 +83,11 @@ export default {
           type: "success",
         });
       }, 5000);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

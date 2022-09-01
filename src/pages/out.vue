@@ -25,6 +25,11 @@
       </el-form-item>
     </el-form>
     <div class="title">出库单详情</div>
+    <el-form  class="forms">
+      <el-form-item label="日期筛选" label-width="80px">
+        <el-date-picker type="month"></el-date-picker>
+      </el-form-item>
+    </el-form>
     <el-table class="tables" :data="tableData" border>
       <el-table-column label="原料ID" prop="id"> </el-table-column>
       <el-table-column label="原料名称" prop="name"> </el-table-column>
@@ -32,7 +37,13 @@
       <el-table-column label="出库价格" prop="price"></el-table-column>
       <el-table-column label="出库时间" prop="ptime"></el-table-column>
       <el-table-column label="负责人" prop="username"></el-table-column>
-      <el-table-column labal="查看明细" prop="check"></el-table-column>
+      <el-table-column labal="查看明细" prop="check">
+        <template slot-scope="scope">
+          <el-button @click="handleClick(scope.row)" type="text" size="small"
+            >查看</el-button
+          >
+        </template>
+      </el-table-column>
     </el-table>
   </el-card>
 </template>
