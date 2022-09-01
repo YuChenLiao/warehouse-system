@@ -4,10 +4,10 @@
     <el-form class="forms">
       <el-form-item style="text-align: center">
         <el-button type="primary" @click="backupData" :loading="backup"
-          >数据库备份</el-button
+        >数据库备份</el-button
         >
         <el-button type="success" @click="showAddForm" :loading="submited"
-          >添加新用户</el-button
+        >添加新用户</el-button
         >
       </el-form-item>
     </el-form>
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: "system",
+  name: "systemPage",
   data() {
     return {
       showForm: false, // 控制添加用户表单的显示

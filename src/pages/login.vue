@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "login",
+  name: "loginPage",
   data() {
     return {
       loginForm: {

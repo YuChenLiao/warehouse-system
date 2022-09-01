@@ -19,7 +19,7 @@
       </el-form-item>
       <el-form-item label-width="80px">
         <el-button type="primary" @click="submit" :loading="submited"
-          >提交</el-button
+        >提交</el-button
         >
         <el-button type="danger">清空</el-button>
       </el-form-item>
@@ -40,7 +40,7 @@
       <el-table-column labal="查看明细" prop="check">
         <template slot-scope="scope">
           <el-button @click="handleClick(scope.row)" type="text" size="small"
-            >查看</el-button
+          >查看</el-button
           >
         </template>
       </el-table-column>

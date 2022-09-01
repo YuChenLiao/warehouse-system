@@ -13,9 +13,9 @@
       </el-form-item>
       <el-form-item label="入库价格" label-width="80px">
         <el-input
-          type="number"
-          class="mini"
-          v-model="submitForm.price"
+            type="number"
+            class="mini"
+            v-model="submitForm.price"
         ></el-input>
       </el-form-item>
       <el-form-item label="物料单位" label-width="80px">
@@ -23,9 +23,9 @@
       </el-form-item>
       <el-form-item label="入库数量" label-width="80px">
         <el-input
-          class="mini"
-          type="number"
-          v-model="submitForm.num"
+            class="mini"
+            type="number"
+            v-model="submitForm.num"
         ></el-input>
       </el-form-item>
       <el-form-item label="负责人" label-width="80px">
@@ -33,7 +33,7 @@
       </el-form-item>
       <el-form-item label-width="80px">
         <el-button type="primary" @click="submit" :loading="submited"
-          >提交</el-button
+        >提交</el-button
         >
         <el-button type="danger">清空</el-button>
       </el-form-item>
@@ -54,7 +54,7 @@
       <el-table-column labal="查看明细" prop="check">
         <template slot-scope="scope">
           <el-button @click="handleClick(scope.row)" type="text" size="small"
-            >查看</el-button
+          >查看</el-button
           >
         </template>
       </el-table-column>
