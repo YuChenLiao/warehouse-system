@@ -4,13 +4,13 @@
       <p class="title">登录</p>
       <el-form :model="loginForm" :rules="rules">
         <el-form-item label="用户名" label-width="80px" prop="user">
-          <el-input v-model="loginForm.userName"></el-input>
+          <el-input v-model="loginForm.username"></el-input>
         </el-form-item>
         <el-form-item label="密码" label-width="80px" prop="pass">
-          <el-input v-model="loginForm.password"></el-input>
+          <el-input v-model="loginForm.password" show-password></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="login">登录</el-button>
+          <el-button type="primary" @click="login()">登录</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -18,24 +18,43 @@
 </template>
 
 <script>
+import axios from "axios";
+import Qs from 'qs';
 export default {
+
   name: "login",
   data() {
     return {
       loginForm: {
-        userName: '',
+        username: '',
         password: ''
       },
       rules: {
-        user: { required: true, message: '用户名不能为空', trigger: 'blur' },
-        pass: { required: true, message: '密码不能为空', trigger: 'blur' }
+        username: { required: true, message: '用户名不能为空', trigger: 'blur' },
+        password: { required: true, message: '密码不能为空', trigger: 'blur' }
       }
     };
   },
 
   methods: {
     login() {
-      this.$router.push('/firstPage')
+      axios.post('http://localhost:8088/api/login',
+        Qs.stringify({
+          username: this.loginForm.username,
+          password: this.loginForm.password
+        }), {
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded'
+          }
+        }).then(res => {
+        if (res.data.status === 200) {
+          this.$message.success(res.data.message)
+          localStorage.setItem('token', res.data.data)
+          this.$router.push('/firstPage')
+        } else if (res.data.status === 400) {
+          this.$message.error(res.data.message)
+        }
+      })
     }
   }
 };
