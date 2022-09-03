@@ -51,7 +51,7 @@
         >提交
         </el-button
         >
-        <el-button type="danger">清空</el-button>
+        <el-button type="danger" @click="clearForm()">清空</el-button>
       </el-form-item>
     </el-form>
     <div class="title">在库原料信息</div>
@@ -157,6 +157,9 @@ export default {
         }
         this.getProducts();
       });
+      setTimeout(() => {
+        this.clearForm()
+      },200)
     },
     dateFormat (row, column, cellValue, index) {
       const daterc = row[column.property]
@@ -171,6 +174,17 @@ export default {
         const marr = tarr[0].split(':')
         const dd = darr[0] + '-' + darr[1] + '-' + darr[2] + ' ' + marr[0] + ':' + marr[1] + ':' + marr[2].substring(0, 2)
         return dd
+      }
+    },
+    clearForm() {
+      this.submitForm = {
+        pname: "",
+        punit: "",
+        store: "",
+        type: "",
+        price: 0.0,
+        num: 0,
+        username: ""
       }
     }
   },

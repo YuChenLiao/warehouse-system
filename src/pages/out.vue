@@ -28,7 +28,7 @@
         <el-button type="primary" @click="submit()"
           >提交</el-button
         >
-        <el-button type="danger">清空</el-button>
+        <el-button type="danger" @click="clearForm()">清空</el-button>
       </el-form-item>
     </el-form>
     <div class="title">出库单详情</div>
@@ -123,6 +123,9 @@ export default {
         }
         this.getOut();
       })
+      setTimeout(() => {
+        this.clearForm()
+      },200)
     },
     dateFormat (row, column, cellValue, index) {
       const daterc = row[column.property]
@@ -155,6 +158,15 @@ export default {
     res() {
       this.getOut();
       this.inTime = []
+    },
+    clearForm() {
+      this.outForm = {
+        pname: "",
+        store: "",
+        price: 0,
+        num: 0,
+        username: "",
+      }
     }
   },
   mounted() {
