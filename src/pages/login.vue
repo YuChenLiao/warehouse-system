@@ -47,6 +47,7 @@ export default {
             'content-type': 'application/x-www-form-urlencoded'
           }
         }).then(res => {
+          console.log(res)
         if (res.data.status === 200) {
           this.$message.success(res.data.message)
           localStorage.setItem('token', res.data.data)

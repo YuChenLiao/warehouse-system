@@ -16,7 +16,7 @@
         </el-menu-item>
         <el-menu-item index="3" @click="toPage('3')">
           <i class="el-icon-document"></i>
-          <span slot="title">领料登记</span>
+          <span slot="title">出库登记</span>
         </el-menu-item>
         <el-menu-item index="4" @click="toPage('4')">
           <i class="el-icon-setting"></i>

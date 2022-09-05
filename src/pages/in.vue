@@ -124,6 +124,7 @@ export default {
       });
     },
     submit() {
+      this.submited = true
       axios
         .post(
           "http://localhost:8088/api/prod/ware",
@@ -149,6 +150,7 @@ export default {
           }
           setTimeout(() => {
             this.clearForm();
+            this.submited = false
           }, 200);
           this.getIN();
         });
